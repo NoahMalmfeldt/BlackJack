@@ -6,6 +6,7 @@ body {
     color: white;
     text-align: center;
     height: 100vh;
+    border: 3px solid white;
 }
 
 h1 {
@@ -14,8 +15,8 @@ h1 {
 
 #message-el {
     font-style: italic;
+    margin-top: 1;
 }
-
 
 button {
     color: #016f32;
@@ -26,4 +27,20 @@ button {
     font-weight: bold;
     border: none;
     border-radius: 2px;
+    margin-bottom: 30px;
 }
+
+.container {
+    height: 200px;
+    position: relative;
+    border: none;
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
