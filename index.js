@@ -7,7 +7,7 @@ let sixthCard = 0
 let seventhCard = 0
 let sum = 0
 let numberOfHits = 0
-let maxHits=7
+let maxHits=3
 let hasBlackJack = false
 let isAlive = true
 let message = ""
@@ -23,6 +23,7 @@ function reset() {
     sixthCard = 0
     seventhCard = 0
     sum = 0
+    numberOfHits = 0
     cards.textContent = "Cards:" + firstCard + ", " + secondCard;
     sumEl.textContent = "Sum:" + sum
 }
@@ -32,6 +33,7 @@ function startGame() {
     firstCard = Math.floor(Math.random() * 11) + 2;
     secondCard = Math.floor(Math.random() * 11) + 2;
     sum = firstCard + secondCard
+    numberOfHits = 0
 
     if (sum <= 20) {
         message = "Do you want to draw a new card? 🙂"
@@ -55,16 +57,14 @@ function changeHits() {
         hit()
     } else if(numberOfHits === 1) {
         hit2()
+    } else if(numberOfHits === maxHits) {
+        reset()
     } else if(numberOfHits === 2) {
         hit3()
     } else if(numberOfHits === 3) {
         hit4()
-    } else if(numberOfHits === 4) {
+    } else {
         hit5()
-    } else if(numberOfHits === 5) {
-        hit6()
-    } else if(numberOfHits === 6) {
-        hit7()
     }
 
     numberOfHits += 1
@@ -111,9 +111,9 @@ function hit2() {
 }
 
 function hit3() {
-    thirdCard = Math.floor(Math.random() * 11) + 2;
+    fifthCard = Math.floor(Math.random() * 11) + 2;
     sum = firstCard + secondCard + thirdCard + fourthCard + fifthCard + sixthCard + seventhCard
-    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard;
+    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard + ", " + fourthCard + ", " + fifthCard;
     sumEl.textContent = "Sum:" + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card? 🙂"
@@ -131,9 +131,9 @@ function hit3() {
 }
 
 function hit4() {
-    thirdCard = Math.floor(Math.random() * 11) + 2;
+    sixthCard = Math.floor(Math.random() * 11) + 2;
     sum = firstCard + secondCard + thirdCard + fourthCard + fifthCard + sixthCard + seventhCard
-    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard;
+    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard + ", " + fourthCard + ", " + fifthCard + ", " + sixthCard;
     sumEl.textContent = "Sum:" + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card? 🙂"
@@ -151,9 +151,9 @@ function hit4() {
 }
 
 function hit5() {
-    thirdCard = Math.floor(Math.random() * 11) + 2;
+    seventhCard = Math.floor(Math.random() * 11) + 2;
     sum = firstCard + secondCard + thirdCard + fourthCard + fifthCard + sixthCard + seventhCard
-    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard;
+    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard + ", " + fourthCard + ", " + fifthCard + ", " + sixthCard + ", " + seventhCard;
     sumEl.textContent = "Sum:" + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card? 🙂"
@@ -169,47 +169,5 @@ function hit5() {
     messageEl.textContent = message
 
 }
-
-function hit6() {
-    thirdCard = Math.floor(Math.random() * 11) + 2;
-    sum = firstCard + secondCard + thirdCard + fourthCard + fifthCard + sixthCard + seventhCard
-    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard;
-    sumEl.textContent = "Sum:" + sum
-    if (sum <= 20) {
-        message = "Do you want to draw a new card? 🙂"
-    } else if (sum === 21) {
-        message = "Wohoo! You've got Blackjack! 🥳"
-        hasBlackJack = true
-    } else {
-        message = "You're out of the game! 😭"
-        isAlive = false
-        reset()
-    }
-    
-    messageEl.textContent = message
-
-}
-
-function hit7() {
-    thirdCard = Math.floor(Math.random() * 11) + 2;
-    sum = firstCard + secondCard + thirdCard + fourthCard + fifthCard + sixthCard + seventhCard
-    cards.textContent = "Cards:" + firstCard + ", " + secondCard + ", " + thirdCard;
-    sumEl.textContent = "Sum:" + sum
-    if (sum <= 20) {
-        message = "Do you want to draw a new card? 🙂"
-    } else if (sum === 21) {
-        message = "Wohoo! You've got Blackjack! 🥳"
-        hasBlackJack = true
-    } else {
-        message = "You're out of the game! 😭"
-        isAlive = false
-        reset()
-    }
-    
-    messageEl.textContent = message
-
-}
-
-console.log(maxHits)
 
 
