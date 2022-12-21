@@ -30,6 +30,7 @@ function reset() {
 
 function startGame() {
 
+    reset()
     firstCard = Math.floor(Math.random() * 11) + 2;
     secondCard = Math.floor(Math.random() * 11) + 2;
     sum = firstCard + secondCard
@@ -43,7 +44,6 @@ function startGame() {
     } else {
         message = "You're out of the game! 😭"
         isAlive = false
-        reset()
     }
 
     messageEl.textContent = message
@@ -83,7 +83,6 @@ function hit() {
     } else {
         message = "You're out of the game! 😭"
         isAlive = false
-        reset()
     }
     
     messageEl.textContent = message
@@ -103,7 +102,6 @@ function hit2() {
     } else {
         message = "You're out of the game! 😭"
         isAlive = false
-        reset()
     }
     
     messageEl.textContent = message
@@ -123,7 +121,6 @@ function hit3() {
     } else {
         message = "You're out of the game! 😭"
         isAlive = false
-        reset()
     }
     
     messageEl.textContent = message
@@ -143,7 +140,6 @@ function hit4() {
     } else {
         message = "You're out of the game! 😭"
         isAlive = false
-        reset()
     }
     
     messageEl.textContent = message
@@ -163,7 +159,6 @@ function hit5() {
     } else {
         message = "You're out of the game! 😭"
         isAlive = false
-        reset()
     }
     
     messageEl.textContent = message
